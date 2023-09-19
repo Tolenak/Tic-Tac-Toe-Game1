@@ -9,3 +9,13 @@ body {
     width: 320px;
     margin: 0 auto;
 }
+
+.cell {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #eee;
+}
