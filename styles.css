@@ -4,6 +4,12 @@ h1 {
  position:
 }
 
+h2,p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  border: 2px black;
+}
+
 body {
     background-color: rgb(60, 108, 205);
 }
