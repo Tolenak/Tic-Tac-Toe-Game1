@@ -14,12 +14,26 @@ body {
     background-color: rgb(60, 108, 205);
 }
 
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
 .board { 
     display:grid; 
     grid-template-columns: repeat(3, 100px);
     grid-gap: 20px;
     width: 320px;
     margin: 0 auto;
+}
+
+.message {
+    margin: 20px 0;
+    font-size: 20px;  
 }
 
 .cell {
@@ -29,6 +43,11 @@ body {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
+.gameinstructions { 
+    flex: auto;
+    border: solid 3px black;
+    border-width: 3px;
+}

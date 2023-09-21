@@ -15,21 +15,25 @@
 <!-- Instructions -->
 <div> 
 <h2>Instructions</h2>
-<p>Blah blah blah blah</p> 
-</div>
+<p class="gameinstructions">These game requires two players. Player 1 will be "X" and Player 2 will be "O". When player 1 clicks on a square an "X" will appear and the same goes for Player 2. You take turns. The objective of the game is to get 3 "X's" or "O's" (depending on which player you are) in a row. The Screen will flash when the game is over! 
+</p> 
+</div class =.container>
 
 <!--Tic Tac Toe Board set up tags-->
 <div class="board" id="board">
-    <div class="cell" onclick="makeMove(0)"></div>
-    <div class="cell" onclick="makeMove(1)"></div>
-    <div class="cell" onclick="makeMove(2)"></div>
-    <div class="cell" onclick="makeMove(3)"></div>
-    <div class="cell" onclick="makeMove(4)"></div>
-    <div class="cell" onclick="makeMove(5)"></div>
-    <div class="cell" onclick="makeMove(6)"></div>
-    <div class="cell" onclick="makeMove(7)"></div>
-    <div class="cell" onclick="makeMove(8)"></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
+    <div class="cell" ></div>
 </div>
+
+<!--Reset Button-->
+<button id="resetButton">Reset Board</button>
 
 <!-- Game win Display Message -->
 <p id="message"></p>
