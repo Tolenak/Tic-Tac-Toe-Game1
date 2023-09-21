@@ -40,10 +40,11 @@ body {
     width: 110px;
     height: 110px;
     text-align: center;
-    font-size: 40px;
+    font-size: 55px;
     font-weight: bold;
     cursor: pointer;
     background-color: rgb(255, 255, 255);
+    background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
 }
 
 .gameinstructions { 
