@@ -12,15 +12,15 @@ let winningCombos = [
     [0, 4, 8], [2, 4, 6]
 ];
 
-let board = document.getElementById("board");
-let message = document.getElementById("message");
-let resetButton = document.getElementById("resetButton");
+const board = document.getElementById("board");
+const message = document.getElementById("message");
+const resetButton = document.getElementById("resetButton");
 
 // setting the combinations of possible wins
 function checkWinner() {
-    for (let combo of winningCombos) {
-        let [a,b,c] = combo; 
-        if  playingBoard [a] && playingBoard [a]=== playingBoard [b] && playingBoard [a] === playingBoard [c]){
+    for (const combo of winningCombos) {
+        const [a,b,c] = combo; 
+        if  (playingBoard[a] && playingBoard[a]=== playingBoard[b] && playingBoard[a] === playingBoard[c]){
             return playingBoard[a]; 
         }
     }
@@ -33,7 +33,7 @@ function checkWinner() {
 
 // make x and o appear on board - Had to look on W3 schools/ google search to figure this out// 
 function handleClick(index) {
-    if  playingBoard[index] === "" && gameActive) {
+    if  (playingBoard[index] === "" && gameActive) {
      playingBoard[index] = currentPlayer;
         renderBoard();
         const winner = checkWinner();
@@ -68,7 +68,15 @@ function resetGame() {
     renderBoard();
 }
 
+// adding event listener to work with function resetGame () button above //
+// had to use modzilla to create the event listener for function // 
+board.addEventListener("click", (event)=> {
+    let cellIndex = Array.from(board.children).indexOf(event.target); 
+    if (cellIndex !== -1){
+        handleClick(cellIndex)
+    }
+}); 
 
-
-
-
+// call back for reset game function // 
+ resetButton.addEventListener('click', resetGame); 
+ resetGame(); 
