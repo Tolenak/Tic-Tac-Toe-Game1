@@ -14,3 +14,12 @@ const board = document.getElementById("board");
 const message = document.getElementById("message");
 const resetButton = document.getElementById("resetButton");
 
+// winner and draw message // 
+
+
+// make x and o appear on board // 
+
+
+// reset game board button function // 
+
+
