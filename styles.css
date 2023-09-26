@@ -2,12 +2,12 @@ h1 {
  font-family: monospace;
  text-align: center;
  position:
-}
+} 
 
 h2,p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
-  border: 2px black;
+  border: 2px rgb(131, 116, 116);
 }
 
 body {
