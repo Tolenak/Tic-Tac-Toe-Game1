@@ -21,9 +21,6 @@ function checkWinner() {
     for (const combo of winningCombos) {
         const [a,b,c] = combo; 
         if  (playingBoard[a] && playingBoard[a]=== playingBoard[b] && playingBoard[a] === playingBoard[c]){
-            cells[a].classList.add("win-background");
-            cells[b].classList.add("win-background");
-            cells[c].classList.add("win-background");
             return playingBoard[a]; 
         }
     }
