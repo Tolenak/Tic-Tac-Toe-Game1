@@ -14,12 +14,45 @@ const board = document.getElementById("board");
 const message = document.getElementById("message");
 const resetButton = document.getElementById("resetButton");
 
-// winner and draw message // 
+// winner & draw  // 
 
 
-// make x and o appear on board // 
+// make x and o appear on board - Had to look on W3 schools/ google search to figure this out// 
+function handleClick(index) {
+    if (boardState[index] === "" && gameActive) {
+        boardState[index] = currentPlayer;
+        renderBoard();
+        const winner = checkWinner();
+        // message to display winner or draw//
+        if (winner) {
+            message.textContent = `Player ${winner} wins!`;
+            gameActive = false;
+        } else if (checkDraw()) {
+            message.textContent = "It's a draw!";
+            gameActive = false;
+        } else {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+        }
+    }
+}
+
+
+function renderBoard() {
+    for (let i = 0; i < 9; i++) {
+        const cell = document.getElementsByClassName("cell")[i];
+        cell.textContent = boardState[i];
+    }
+}
 
 
 // reset game board button function // 
+function resetGame() {
+    currentPlayer = "X";
+    boardState = ["", "", "", "", "", "", "", "", ""];
+    gameActive = true;
+    message.textContent = "";
+    renderBoard();
+}
+
 
 

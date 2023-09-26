@@ -48,7 +48,7 @@ body {
     background: linear-gradient(to bottom, #f0f0f0, #d9d9d9);
 }
 
-.gameinstructions { 
+.gameInstructions { 
     flex: auto;
     border: solid 3px black;
     border-width: 3px;
