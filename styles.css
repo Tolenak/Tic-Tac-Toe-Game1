@@ -53,3 +53,11 @@ body {
     border: solid 3px black;
     border-width: 3px;
 }
+
+.win-background { 
+    background-color: green;
+}
+
+.draw-background { 
+    background-color: purple; 
+}

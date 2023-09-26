@@ -21,6 +21,9 @@ function checkWinner() {
     for (const combo of winningCombos) {
         const [a,b,c] = combo; 
         if  (playingBoard[a] && playingBoard[a]=== playingBoard[b] && playingBoard[a] === playingBoard[c]){
+            cells[a].classList.add("win-background");
+            cells[b].classList.add("win-background");
+            cells[c].classList.add("win-background");
             return playingBoard[a]; 
         }
     }
@@ -28,7 +31,9 @@ function checkWinner() {
 }
 // combination of possible draws // 
     function checkDraw(){
+        board.classList.add("draw-background");
         return playingBoard.every(cell => cell !== "");
+        
     }
 
 // make x and o appear on board - Had to look on W3 schools/ google search to figure this out// 
