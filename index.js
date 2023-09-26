@@ -1,26 +1,40 @@
+// had to use w3 and mozillla a lot to help with javascript section // 
 
 // Variables //
 let currentPlayer = "X";
-let boardState = ["", "", "", "", "", "", "", "", ""];
+let playingBoard = ["", "", "", "", "", "", "", "", ""];
 let gameActive = true
 
-const winningCombos = [
+// used google search to figure how combos // 
+let winningCombos = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
     [0, 4, 8], [2, 4, 6]
 ];
 
-const board = document.getElementById("board");
-const message = document.getElementById("message");
-const resetButton = document.getElementById("resetButton");
+let board = document.getElementById("board");
+let message = document.getElementById("message");
+let resetButton = document.getElementById("resetButton");
 
-// winner & draw  // 
-
+// setting the combinations of possible wins
+function checkWinner() {
+    for (let combo of winningCombos) {
+        let [a,b,c] = combo; 
+        if  playingBoard [a] && playingBoard [a]=== playingBoard [b] && playingBoard [a] === playingBoard [c]){
+            return playingBoard[a]; 
+        }
+    }
+        return null; 
+}
+// combination of possible draws // 
+    function checkDraw(){
+        return playingBoard.every(cell => cell !== "");
+    }
 
 // make x and o appear on board - Had to look on W3 schools/ google search to figure this out// 
 function handleClick(index) {
-    if (boardState[index] === "" && gameActive) {
-        boardState[index] = currentPlayer;
+    if  playingBoard[index] === "" && gameActive) {
+     playingBoard[index] = currentPlayer;
         renderBoard();
         const winner = checkWinner();
         // message to display winner or draw//
@@ -40,7 +54,7 @@ function handleClick(index) {
 function renderBoard() {
     for (let i = 0; i < 9; i++) {
         const cell = document.getElementsByClassName("cell")[i];
-        cell.textContent = boardState[i];
+        cell.textContent = playingBoard[i];
     }
 }
 
@@ -48,11 +62,12 @@ function renderBoard() {
 // reset game board button function // 
 function resetGame() {
     currentPlayer = "X";
-    boardState = ["", "", "", "", "", "", "", "", ""];
+ playingBoard = ["", "", "", "", "", "", "", "", ""];
     gameActive = true;
     message.textContent = "";
     renderBoard();
 }
+
 
 
 
