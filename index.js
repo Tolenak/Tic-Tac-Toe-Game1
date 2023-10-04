@@ -38,7 +38,26 @@ function switchPlayer(currentplayer) {
 })
 
 
-// create a function for a player to win and draw between two players 
+// create a function to check if a player has won or if there is a draw 
+function checkWin(board, currentPlayer) {
+    for (const combinitons of winPatterns) { 
+        let [a,b,c] = combinitons; 
+        if (board[a]=== currentPlayer && board[b] === currentPlayer && board [c] === currentPlayer) {
+            return true; // this means the player with tic tac toe has won the game 
+            // console.log("a player has won the game")
+        }
+    }
+    return false; // if this returns then no player has won the game yet 
+    // console.log("no player has won the game yet")
+}
 
-// 
+function checkDraw (board) {
+    return board.every(cell => cell !== "") // console.log("game is a draw!")
+}
+
+
+
+
+//create a function that can handle clicks on indiviual cells 
+// create a function to display a message whether the outcome is a win or draw 
 
