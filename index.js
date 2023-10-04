@@ -88,6 +88,17 @@ function handleCellClick(index) {
 }
 
 
+// create a function that will reset the game when the reset button is pushed 
+// set each element back to original variables so game board will be completely wiped and started from the beginning 
+// copy and paste these from the top variables 
+fucntion resetButton () { 
+    currentPlayer = "X" ; 
+    gameBoard = ["","","", "", "", "", "", "", "",]
+    isGameActive = true; 
+    message.textContent = ""; // this will reset the "Player has won " or Its a draw" messages displayed at the end of the game 
+    cells.forEach(cell => cell.textContent = "") // this will reset x and o content inside the array of cells 
+}
 
-// create a function to display a message whether the outcome is a win or draw 
+
+
 
