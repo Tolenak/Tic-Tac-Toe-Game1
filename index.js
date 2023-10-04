@@ -61,7 +61,7 @@ function checkDraw (board) {
 //create a function that can handle clicks on indiviual cells 
 function handleCellClick(index) { 
     // check if clicked cell is empty and the game is still showing active 
-    if (gameBoard[index] === "" && isGameActive)
+    if (gameBoard[index] === "" && isGameActive) { 
     // set the players symbol "x or O" inside of the clicked cell 
     gameBoard[index] = currentPlayer; 
     cells[index].textContent = currentPlayer; // x or o 
@@ -83,7 +83,11 @@ function handleCellClick(index) {
         // if this is not the case then the current player if x or o will switch to next player symbol 
         currentPlayer = switchPlayer (currentPlayer); 
     }
+    }
+    // console.log('this is working')
 }
+
+
 
 // create a function to display a message whether the outcome is a win or draw 
 
