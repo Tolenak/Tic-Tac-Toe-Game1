@@ -59,5 +59,31 @@ function checkDraw (board) {
 
 
 //create a function that can handle clicks on indiviual cells 
+function handleCellClick(index) { 
+    // check if clicked cell is empty and the game is still showing active 
+    if (gameBoard[index] === "" && isGameActive)
+    // set the players symbol "x or O" inside of the clicked cell 
+    gameBoard[index] = currentPlayer; 
+    cells[index].textContent = currentPlayer; // x or o 
+
+
+    // check to see if the player who just played symbol in cell has won yet 
+    if (checkWin(gameBoard, currentPlayer)) {
+        message.textContent = `Player ${currentPlayer} Wins!`; // messsage to show current player won if that is the case 
+
+        // if player above wins set the game as inactive so that no more moves can be made after message is displayed 
+        isGameActive = false; 
+    } else if (checkDraw(gameBoard)) { // if all cells filled check to see if it is a draw 
+       // display a message if this comes back true saying that it is a draw 
+       message.textContent = "It is a draw!"; 
+
+       // if draw occurs set game to inactive again so no more moves are able to be made 
+       isGameActive = false ;
+    } else {
+        // if this is not the case then the current player if x or o will switch to next player symbol 
+        currentPlayer = switchPlayer (currentPlayer); 
+    }
+}
+
 // create a function to display a message whether the outcome is a win or draw 
 
