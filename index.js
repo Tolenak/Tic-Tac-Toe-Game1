@@ -35,7 +35,7 @@ function switchPlayer(currentplayer) {
     const cells = document.querySelectorAll(".cell");  // allow interaction with indiviual cells 
     const message = document.getElementById("message");  // this is the win or draw message being displayed to players when game finishs 
     const resetButton = document.getElementById("resetButton") // this is the button that allows the game to be reset once pushed 
-})
+
 
 
 // create a function to check if a player has won or if there is a draw 
@@ -91,7 +91,7 @@ function handleCellClick(index) {
 // create a function that will reset the game when the reset button is pushed 
 // set each element back to original variables so game board will be completely wiped and started from the beginning 
 // copy and paste these from the top variables 
-fucntion resetButton () { 
+function resetButton () { 
     currentPlayer = "X" ; 
     gameBoard = ["","","", "", "", "", "", "", "",]
     isGameActive = true; 
@@ -99,6 +99,23 @@ fucntion resetButton () {
     cells.forEach(cell => cell.textContent = "") // this will reset x and o content inside the array of cells 
 }
 
+// add an event listener for the handle cell function so when a player clicks a cell it will actually do it 
+
+cells.forEach((cell, index) => { 
+    cells.addEventListener ("click", () => {
+        handleCellClick(index); 
+    }); 
+}); 
+
+// add an event listener for the resetButton function, so when button is pushed on click the board will reset 
+
+resetButton.addEventListener ('click'. () => {
+    resetGame(); 
+}); 
+
+// initializing the game
+resetGame (); 
+}) 
 
 
 
